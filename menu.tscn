@@ -1,0 +1,119 @@
+[gd_scene load_steps=9 format=3 uid="uid://66axay1yergf"]
+
+[ext_resource type="Texture2D" uid="uid://cp7llv1cbmwp8" path="res://conway-game-of-life_small.png" id="1_dvbjj"]
+[ext_resource type="FontFile" uid="uid://gfsgxs8t1voj" path="res://Tox Typewriter.ttf" id="1_l3his"]
+[ext_resource type="Script" path="res://menu.gd" id="1_rjq45"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d1jdq"]
+texture = ExtResource("1_dvbjj")
+modulate_color = Color(0.129558, 0.129558, 0.129558, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0cfgl"]
+bg_color = Color(1.08294e-07, 0.137369, 0.137369, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7gxpy"]
+bg_color = Color(0, 0.0611229, 0.0611229, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_78fhg"]
+bg_color = Color(0, 0.137255, 0.137255, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qp1hl"]
+bg_color = Color(6.76839e-09, 0.0560068, 0.0560067, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 4.0
+offset_right = 1.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+script = ExtResource("1_rjq45")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_d1jdq")
+
+[node name="Start_button" type="Button" parent="."]
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.5
+offset_top = 68.0
+offset_right = 99.5
+offset_bottom = 121.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(0.682762, 0.484385, 0.358938, 0.996078)
+theme_override_colors/font_pressed_color = Color(0.82941, 0.368351, 0.336335, 1)
+theme_override_fonts/font = ExtResource("1_l3his")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = SubResource("StyleBoxFlat_0cfgl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7gxpy")
+text = "Start game"
+
+[node name="Options_button" type="Button" parent="."]
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.5
+offset_top = 140.5
+offset_right = 100.5
+offset_bottom = 193.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_l3his")
+theme_override_font_sizes/font_size = 25
+disabled = true
+text = "Options"
+
+[node name="Quit_button" type="Button" parent="."]
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -94.5
+offset_top = 213.0
+offset_right = 101.5
+offset_bottom = 266.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(0.682353, 0.486275, 0.360784, 0.996078)
+theme_override_colors/font_pressed_color = Color(0.827451, 0.368627, 0.337255, 1)
+theme_override_fonts/font = ExtResource("1_l3his")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = SubResource("StyleBoxFlat_78fhg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qp1hl")
+text = "Quit
+"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -165.0
+offset_top = 242.0
+offset_right = 206.0
+offset_bottom = 361.0
+grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("1_l3his")
+theme_override_fonts/bold_font = ExtResource("1_l3his")
+theme_override_font_sizes/normal_font_size = 65
+theme_override_font_sizes/bold_font_size = 65
+text = "Game of Life"
+fit_content = true
